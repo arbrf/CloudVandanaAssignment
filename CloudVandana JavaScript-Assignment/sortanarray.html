@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Array in Descending Order</title>
+</head>
+
+<body>
+    <h1>Sort Array in Descending Order</h1>
+    <label for="numbers">Enter numbers (comma separated):</label>
+    <input type="text" id="numbers">
+    <button onclick="sortArray()">Sort</button>
+    <p id="output"></p>
+
+    <script>
+        function sortArray() {
+            // Get input numbers as a comma-separated string and convert it into an array
+            var inputNumbers = document.getElementById('numbers').value;
+            var numbersArray = inputNumbers.split(',').map(function(item) {
+                return parseInt(item, 10);
+            });
+
+            // Sort the array in descending order
+            numbersArray.sort(function(a, b) {
+                return b - a;
+            });
+
+            // Display the sorted array
+            document.getElementById('output').textContent = 'Sorted Array in Descending Order: ' + numbersArray.join(', ');
+        }
+    </script>
+</body>
+
+</html>
